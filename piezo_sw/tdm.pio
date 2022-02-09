@@ -1,0 +1,10 @@
+.program tdm
+
+
+.program tdm_output_mclk
+; toggles the clock at the sm frequency/2
+.side_set 1
+.wrap_target
+    nop side 1
+    nop side 0
+.wrap
