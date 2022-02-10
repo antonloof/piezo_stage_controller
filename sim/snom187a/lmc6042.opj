@@ -1,0 +1,79 @@
+(ExpressProject "LMC6042"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2020 S006-[08/13/21]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\library\old_models\lmc6042.olb"
+        (Type "Schematic Library")))
+    ("Allegro Netlist Directory" "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "61215")
+    (NoModify)
+    (File ".\lmc6042.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\lmc6042-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\lmc6042-pspicefiles\schematic1\transient.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lmc6042-pspicefiles\schematic1\transient.sim"
+        (DisplayName "SCHEMATIC1-Transient")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\old_models\lmc6042.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\old_models\lmc6042.lib")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (Folder "Logs")
+  (PartMRUSelector
+    (LMC6042
+      (FullPartName "LMC6042.Normal")
+      (LibraryName
+         "C:\USERS\A0232807\DOCUMENTS\MODELING\MODEL_FIX_REUPLOAD\OLD_MODELS\LMC6042.OLB")
+      (DeviceIndex "0"))
+    (LMC6036
+      (FullPartName "LMC6036.Normal")
+      (LibraryName
+         "C:\USERS\A0232807\DOCUMENTS\MODELING\MODEL_FIX_REUPLOAD\OLD_MODELS\LMC6036.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory
+     "C:\Users\a0232807\Documents\Modeling\model_fix_reupload\Old_models")
+  (MPSSessionName "a0232807")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\lmc6042.dsn")
+      (Path "Design Resources" ".\lmc6042.dsn" "SCHEMATIC1")
+      (Path "Design Resources" ".\lmc6042.dsn" "Design Cache")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Select "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 1115"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1627 24 1133")
+        (Scroll "-86 -12")
+        (Zoom "146")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\A0232807\DOCUMENTS\MODELING\MODEL_FIX_REUPLOAD\LMC6042.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

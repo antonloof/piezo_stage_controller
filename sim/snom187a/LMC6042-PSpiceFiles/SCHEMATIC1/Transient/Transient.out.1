@@ -1,0 +1,179 @@
+
+**** 08/13/21 16:23:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Transient.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../old_models/lmc6042.lib" 
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\17.4.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1m 0 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LMC6042
+V_V2         0 VEE 7.75
+V_V3         VIN 0  
++SIN 0 1 1k 0 0 0
+V_V1         VCC 0 7.75
+X_U1         VIN VO VCC VEE VO LMC6042
+
+**** RESUMING Transient.cir ****
+.END
+
+INFO(ORPSIM-15423): Unable to find index file lmc6042.ind for library file lmc6042.lib.
+
+INFO(ORPSIM-15422): Making new index file lmc6042.ind for library file lmc6042.lib.
+
+Index has 1 entries from 1 file(s).
+
+**** 08/13/21 16:23:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.DA         X_U1.DB         X_U1.DX         
+          IS   13.000000E-15   12.000000E-15   10.000000E-15 
+
+
+**** 08/13/21 16:23:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.MX         
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO   -2.19         
+          KP  705.470000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+ERROR(ORPSIM-16583): Detected an imported model containing transistors or diodes. For such models, PSpice for TI supports a minimum of one and maximum of three traces. Reduce the number of traces and simulate again.
+
+
+ABORTING SIMULATION
+**** 08/13/21 16:23:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =           4
+  External (NCNODS)                 =          34
+  Total (NUMNOD)                    =          34
+
+Total device count (NUMEL)          =          66
+  Capacitors (C)                    =           7
+  Diodes (D)                        =          14
+  VCVS (E)                          =           5
+  CCCS (F)                          =           3
+  VCCS (G)                          =           4
+  Current Sources (I)               =           2
+  Inductors (L)                     =           2
+  MosFETs (M)                       =           2
+  Resistors (R)                     =          13
+  Voltage Sources (V)               =          12
+
+Number of subcircuits (X)           =           1
+
+Matrix statistics:
+  Matrix size (NSTOP)               =          53
+  Initial no. elements (NTTAR)      =         201
+  No. elements w/ fillin (NTTBR)    =         201
+  No. fillins (IFILL)               =           0
+  No. overflows (NTTOV)             =           0
+  No. LU operations (IOPS)          =           0
+  Percent sparsity (PERSPA)         =      92.844
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =           0
+  No. rejected time points (NUMRTP) =           0
+  No. iterations (NUMNIT)           =           0
+
+Load Threads                        =           1
+
+Runtime statistics:                       Seconds      Iterations
+  Matrix load                       =        0.00
+  Matrix solution                   =        0.00               1
+  Readin                            =        2.25
+  General setup                     =        0.00
+  CMI setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =        0.00               0
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =         .09
+  Total job time (using Solver 1)   =        2.25
+

@@ -1,0 +1,191 @@
+
+**** 08/13/21 16:23:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Transient.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../old_models/lmc6042.lib" 
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\17.4.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1m 0 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 N([VO])
+.PROBE64 N([VIN])
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LMC6042
+V_V2         0 VEE 7.75
+V_V3         VIN 0  
++SIN 0 1 1k 0 0 0
+V_V1         VCC 0 7.75
+X_U1         VIN VO VCC VEE VO LMC6042
+
+**** RESUMING Transient.cir ****
+.END
+
+**** 08/13/21 16:23:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.DA         X_U1.DB         X_U1.DX         
+          IS   13.000000E-15   12.000000E-15   10.000000E-15 
+
+
+**** 08/13/21 16:23:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.MX         
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO   -2.19         
+          KP  705.470000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 08/13/21 16:23:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VO)     .0030  (  VCC)    7.7500  (  VEE)   -7.7500  (  VIN)    0.0000      
+
+(X_U1.4)    2.2470 (X_U1.5)   -7.7230 (X_U1.6)   -7.7230 (X_U1.7)     .0030     
+
+(X_U1.8)    7.0430 (X_U1.9)     .0025 (X_U1.10)   -7.0540                       
+
+(X_U1.11)     .0025                   (X_U1.12)    -.0029                       
+
+(X_U1.13)    -.0029                   (X_U1.14)    -.0029                       
+
+(X_U1.15)     .0025                   (X_U1.16) 266.7E-09                       
+
+(X_U1.17) 266.7E-09                   (X_U1.19)     .0025                       
+
+(X_U1.20)     .6330                   (X_U1.21)    -.6270                       
+
+(X_U1.22)     .0030                   (X_U1.23)     .0025                       
+
+(X_U1.24)     .0182                   (X_U1.25)    -.0122                       
+
+(X_U1.26)     .6330                   (X_U1.27)    -.6270                       
+
+(X_U1.29)     .6330                   (X_U1.30)    -.6270                       
+
+(X_U1.49)    0.0000                   (X_U1.96)   -7.7500                       
+
+(X_U1.97)    7.7500                   (X_U1.98)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -1.412E-05
+    V_V3         3.000E-15
+    V_V1        -1.412E-05
+    X_U1.VA1     1.105E-14
+    X_U1.VA2     4.126E-15
+    X_U1.VA3    -3.998E-15
+    X_U1.V2      7.051E-12
+    X_U1.V3      7.066E-12
+    X_U1.V4     -6.405E-13
+    X_U1.V5     -6.395E-13
+    X_U1.V6     -2.102E-04
+    X_U1.V7     -2.102E-04
+
+    TOTAL POWER DISSIPATION   4.84E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/13/21 16:23:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient"  [ C:\Users\a0232807\Documents\Modeling\model_fix_reupload\LMC6042-PSpiceFiles\SCHEMATIC1\Transie
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        2.38
+  Total job time (using Solver 1)   =        1.08
+
