@@ -28,3 +28,5 @@ fp-info-cache
 *.zip
 piezo_sw/build/*
 
+*.log
+*.raw

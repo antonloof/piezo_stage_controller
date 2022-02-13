@@ -1,5 +1,6 @@
 Circuit: * C:\Users\Anton\git\piezo_stage_controller\sim\photodiode_to_diff_with_offset.asc
 
+WARNING: Less than two connections to node NC_01.  This node is used by R4.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -31,24 +32,24 @@ Source Step = 93.9394%
 Source stepping succeeded in finding the operating point.
 
 
-peakpeak: AVG(v(outp)-v(outn))=4.611 FROM 0 TO 0.1
+peakpeak: AVG(v(outp)-v(outn))=2.50044 FROM 0 TO 1e-005
 
 
-Date: Sat Feb 12 19:00:05 2022
-Total elapsed time: 0.510 seconds.
+Date: Sun Feb 13 22:02:04 2022
+Total elapsed time: 0.427 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 4020
-traniter = 2132
-tranpoints = 1067
-accept = 1057
-rejected = 10
-matrix size = 142
-fillins = 362
+totiter = 7707
+traniter = 5841
+tranpoints = 1680
+accept = 1513
+rejected = 167
+matrix size = 143
+fillins = 293
 solver = Normal
-Thread vector: 10.8/6.6[4] 4.3/6.2[1] 2.2/5.3[1] 0.8/1.6[1]  2592/500
-Matrix Compiler1: 24.96 KB object code size  5.3/2.7/[1.7]
-Matrix Compiler2: 17.49 KB object code size  2.9/4.1/[1.0]
+Thread vector: 8.0/4.7[4] 3.5/2.2[4] 2.0/1.6[4] 0.6/1.6[1]  2592/500
+Matrix Compiler1: 18.06 KB object code size  3.5/1.5/[0.8]
+Matrix Compiler2: 16.35 KB object code size  1.7/2.7/[0.8]
 
