@@ -1499,7 +1499,7 @@
     (property "Value" "330u" (id 1) (at 93.091 59.3976 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (id 2) (at 91.1352 62.23 0)
+    (property "Footprint" "Capacitor_SMD:CP_Elec_10x10" (id 2) (at 91.1352 62.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 90.17 58.42 0)
