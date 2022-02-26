@@ -36,6 +36,8 @@ target_link_libraries(piezo_controller_sw
         hardware_pio
         hardware_clocks
         hardware_pll
+        hardware_dma
+        hardware_irq
 )
 
 pico_add_extra_outputs(piezo_controller_sw)

@@ -1,5 +1,22 @@
 .program tdm
+; fs is first. Should be sync with mclk (other sm). 
+;Then is sclk should be half cycle after fs
 
+;store a counter for future use should be n-1 or 2 (verify be measuring frequency of fs)
+.side_set 2
+    out X 32 side 1
+
+.wrap_target
+    mov Y X side 3
+
+data_out:
+    out pins 1 side 0 [1]
+    in pins 1 side 2
+    jmp Y-- data_out side 2
+; toggle fs for the last sample
+    out pins 1 side 1 [1]
+    in pins 1 side 3
+.wrap
 
 .program tdm_output_mclk
 ; toggles the clock at the sm frequency/2
