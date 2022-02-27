@@ -9,11 +9,11 @@
 #include "tdm.pio.h"
 
 #define SAMPLE_BUF_SIZE 8
+#define TDM_MCLK_PIN 15
 
 PIO pio;
 uint sm_clock, sm_tdm;
 
-uint tdm_mclk_pin = 15;
 uint tdm_stream_pin = 11;
 uint tdm_stream_pincount = 4;
 uint tdm_stream_input_pin = 14;
@@ -44,9 +44,20 @@ doublebuffer input_buf, output_buf;
 
 int main()
 {
-    pll_init(pll_sys, 1, 1536 * MHZ, 6, 2); // set sys clock to 128MHz
-    init_tdm();
+    set_sys_clock_khz(128000, true); // set sys clock to 128MHz
 
+    init_tdm();
+    gpio_init(PICO_DEFAULT_LED_PIN);
+    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+    while (1)
+    {
+        pio_sm_put(pio, sm_tdm, 0x55555555);
+        pio_sm_get(pio, sm_tdm);
+        // gpio_put(PICO_DEFAULT_LED_PIN, 1);
+        // sleep_ms(250);
+        // gpio_put(PICO_DEFAULT_LED_PIN, 0);
+        // sleep_ms(250);
+    }
     return 0;
 }
 
@@ -55,9 +66,12 @@ void init_tdm()
     pio = pio0;
     init_tdm_pio();
     init_mclk_pio();
-    init_sample_dma();
+
+    pio_sm_put_blocking(pio, sm_tdm, 254); // magic counter value needed for tdm
     // enable both sm's at the same time. This causes them to be synced.
     hw_set_bits(&pio->ctrl, (1 << (PIO_CTRL_SM_ENABLE_LSB + sm_tdm)) | (1 << (PIO_CTRL_SM_ENABLE_LSB + sm_clock)));
+
+    // init_sample_dma();
 }
 
 void init_doublebuffer(doublebuffer *b)
@@ -114,23 +128,22 @@ void init_tdm_pio()
     pio_sm_set_consecutive_pindirs(pio, sm_tdm, tdm_stream_pin, tdm_stream_pincount, true);
     pio_sm_set_consecutive_pindirs(pio, sm_tdm, tdm_stream_input_pin, 1, false);
 
-    pio_sm_put_blocking(pio, sm_tdm, 254); // magic counter value needed for tdm
     pio_sm_init(pio, sm_tdm, offset, &c);
 }
 
 void init_mclk_pio()
 {
-    uint offset = pio_add_program(pio, &tdm_output_mclk_program);
-    pio_sm_config c = tdm_output_mclk_program_get_default_config(offset);
-
-    pio_gpio_init(pio, tdm_mclk_pin);
-    sm_config_set_sideset_pins(&c, tdm_mclk_pin);
-    pio_sm_set_consecutive_pindirs(pio, sm_clock, tdm_mclk_pin, 1, true);
-
     sm_clock = pio_claim_unused_sm(pio, true);
+    uint offset = pio_add_program(pio, &tdm_output_mclk_program);
 
-    // sys clk at 128MHz target is 4Mhz so that the toggles produce a clock at 2MHz thus 128/4 = 32
-    sm_config_set_clkdiv(&c, 32);
+    pio_gpio_init(pio, TDM_MCLK_PIN);
+    pio_sm_set_consecutive_pindirs(pio, sm_clock, TDM_MCLK_PIN, 1, true);
+
+    pio_sm_config c = tdm_output_mclk_program_get_default_config(offset);
+    sm_config_set_sideset_pins(&c, TDM_MCLK_PIN);
+
+    // sys clk at 128MHz target is 8Mhz so that the toggles produce a clock at 2MHz thus 128/8 = 16
+    sm_config_set_clkdiv(&c, 16);
     pio_sm_init(pio, sm_clock, offset, &c);
 }
 
