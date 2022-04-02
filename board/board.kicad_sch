@@ -522,7 +522,7 @@
       (property "Value" "CS42438" (id 1) (at 0 50.165 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Footprint" "Package_QFP:LQFP-52_10x10mm_P0.65mm" (id 2) (at 1.27 55.88 0)
+      (property "Footprint" "good_things:QFP-52_14x14_Pitch0.65mm" (id 2) (at 1.27 55.88 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "Datasheet" "https://d3uzseaevmutz1.cloudfront.net/pubs/proDatasheet/CS42438_F5.pdf" (id 3) (at 0.635 53.34 0)
@@ -3307,7 +3307,7 @@
     (uuid f7cf94e2-d350-43e4-87cd-d57203670d81)
     (property "Reference" "U102" (id 0) (at 191.135 48.1543 0))
     (property "Value" "CS42438" (id 1) (at 191.135 50.9294 0))
-    (property "Footprint" "Package_QFP:LQFP-52_10x10mm_P0.65mm" (id 2) (at 192.405 45.085 0)
+    (property "Footprint" "good_things:QFP-52_14x14_Pitch0.65mm" (id 2) (at 192.405 45.085 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://d3uzseaevmutz1.cloudfront.net/pubs/proDatasheet/CS42438_F5.pdf" (id 3) (at 191.77 47.625 0)
@@ -4098,7 +4098,7 @@
       (reference "U101") (unit 1) (value "Pico") (footprint "MCU_RaspberryPi_and_Boards:RPi_Pico_SMD_TH")
     )
     (path "/f7cf94e2-d350-43e4-87cd-d57203670d81"
-      (reference "U102") (unit 1) (value "CS42438") (footprint "Package_QFP:LQFP-52_10x10mm_P0.65mm")
+      (reference "U102") (unit 1) (value "CS42438") (footprint "good_things:QFP-52_14x14_Pitch0.65mm")
     )
     (path "/7b9c2940-9a15-4fc8-9338-3451987ef45d/53526f67-42ef-48a6-b2d6-d8938fc945f8"
       (reference "U201") (unit 1) (value "AZ1117-ADJ") (footprint "Package_TO_SOT_SMD:TO-252-3_TabPin2")
